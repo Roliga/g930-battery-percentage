@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 
 	res = hid_send_feature_report(handle, buf, 64);
 	if (res < 0) {
-		fprintf(stderr, "Failed to send feature report: %s\n", hid_error(handle));
+		fprintf(stderr, "Failed to send feature report: %ls\n", hid_error(handle));
 		return 1;
 	}
 
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 		res = hid_get_feature_report(handle, buf, 64);
 
 		if (res < 0) {
-			fprintf(stderr, "Failed to get feature report %d: %s\n", i, hid_error(handle));
+			fprintf(stderr, "Failed to get feature report %d: %ls\n", i, hid_error(handle));
 			return 1;
 		}
 
