@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 	int i;
 	int res;
 	hid_device *handle;
-return 0;
+
 	unsigned char buf[64] = {0xFF, 0x09, 0, 0xFD, 0xF4, 0x10, 0x05, 0xB1, 0xBF, 0xA0, 0x04, 0x00, 0, 0, 0, 0};
 	for (i = 16; i < 64; i++)
 		buf[i] = 0;
