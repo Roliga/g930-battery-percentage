@@ -1,0 +1,6 @@
+[Unit]
+Description=Send a notification when g930 headset battery is low
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/g930-battery-notify

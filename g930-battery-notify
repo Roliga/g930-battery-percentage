@@ -1,0 +1,7 @@
+#!/bin/sh
+
+battery=$(g930-battery-percentage)
+
+if [ "$battery" -lt 15 ]; then
+	notify-send -t 60000 -u critical 'G930 Battery Low' "G930 battery at $battery%"
+fi
