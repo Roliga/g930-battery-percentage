@@ -2,7 +2,8 @@
 Description=Send a notification when g930 headset battery is low
 
 [Timer]
-OnUnitInactiveSec=1m
+OnStartupSec=1m
+OnUnitActiveSec=1m
 
 [Install]
 WantedBy=timers.target
