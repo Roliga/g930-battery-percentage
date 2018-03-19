@@ -4,6 +4,9 @@
 
 #include "hidapi.h"
 
+#define BATTERY_MAX 91
+#define BATTERY_MIN 44
+
 int main(int argc, char* argv[])
 {
 	int i;
@@ -39,7 +42,9 @@ int main(int argc, char* argv[])
 		}
 	}
 
-	printf("%d\n", buf[13]);
+	unsigned int batteryPercent = (buf[13] - BATTERY_MIN) * 100 / (BATTERY_MAX - BATTERY_MIN);
+
+	printf("%d\n", batteryPercent);
 
 	hid_close(handle);
 	hid_exit();
